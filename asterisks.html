@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+		debugger;
+		const asterisks = function(ast) {
+			if (ast===0)
+			{return "";}
+			else return "*"+asterisks(ast-1);
+		};
+		const empty = function (ast){
+			if (ast===0){
+			return "";}
+			else return " " + empty(ast-1)}
+		const bon = function (ast,b){
+			if (ast===0){return"";}
+			else return empty(ast)+asterisks(b)+"\n"+bon(ast-1,b+2);
+		};
+		const triasterisks = function (ast){
+			if(ast===0){
+			return"";}
+			else console.log(bon(ast,1))
+		};
+		triasterisks(5);
+</script>
+</body>
+
+</html>
